@@ -1,0 +1,101 @@
+
+/* html{
+    height: 100%;
+} */
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.navbar{
+    height: 75px;
+    background-color: white;
+}
+.nav-link{
+    color:#111;
+}
+.fa-landmark{
+    color: rgb(255, 16, 16);
+}
+footer{
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    margin-top: auto;
+    /* position: absolute;
+    top: 0%;
+    left: 0;
+    transform: translate(-50%, ); */
+}
+.f-social{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+.f-social i {
+margin-right: 15px;
+}
+.f-brand{
+    font-size: 1.2rem;
+
+}
+.f-links{
+    display: flex;
+    justify-content: center;
+}
+.f-links a{
+    text-decoration: none;
+    color: black;margin-right: 5px;
+}
+.row{
+    margin:1rem 0;
+}
+.listing-card{
+    border: none;
+    margin: 20px 0;
+}
+.card-body{
+    padding: 4px 0;
+    padding-top: 4px;
+    padding-bottom: 7px;
+}
+.card-img-top{
+    border-radius: .5rem;
+width: 100%;
+height: 18rem;
+object-fit: cover;
+}
+.card-text {
+    font-weight: 400;
+    text-decoration: none;
+}
+.listing-link{
+    text-decoration: none;
+}
+.btn{
+    color: white;
+    background-color: rgb(255, 16, 16) ;
+    border: none;
+}
+.padd1{
+    padding-left: 0px;
+}
+.padd2{
+    padding-right: 0px;
+}
+/* SHOE ROUTE */
+.btns{
+display: flex;
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+.review-card{
+    margin-left: 25px;
+}

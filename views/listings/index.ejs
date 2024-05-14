@@ -1,0 +1,118 @@
+<body>
+    <% layout("/layouts/boilerplate") %>
+
+        <style>
+            .filters {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 15px;
+                align-items: center;
+            }
+
+            .filter {
+                text-align: center;
+                margin: 1px 15px;
+                opacity: .8;
+            }
+
+            .filter:hover {
+                opacity: 1;
+                cursor: pointer;
+            }
+
+            .tax-toggle {
+                margin-left: 50px;
+                /* margin: 20px 30px; */
+            }
+
+            .tax-info {
+                display: none;
+            }
+        </style>
+
+
+
+        <div class="filters">
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-fire"></i></div>
+                <p>Trendings</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                <p>Beach</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-cow"></i></div>
+                <p>Farms</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-bed-pulse"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-hotel"></i></div>
+                <p>Hotels</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-utensils"></i></div>
+                <p>Restuarents</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castels</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-campground"></i></div>
+                <p>Camps</p>
+            </div>
+            <div class="filter">
+                <div class="category-icon"><i class="fa-solid fa-igloo"></i></div>
+                <p>Doms</p>
+            </div>
+            <div class="tax-toggle">
+
+                <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Total after taxes</label>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+            <% for (let listing of allListings) {%>
+                <a href="/listings/<%= listing.id %>" class="listing-link">
+                    <div class="card listing-card col" style="width: 18rem">
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt=" ...">
+                        <div class="card-body">
+
+                            <p class="card-text">
+                                <b>
+                                    <%= listing.title %>
+                                </b><br>
+                                <%= listing.price.toLocaleString("en-PK") %> PKR /night &nbsp;&nbsp;
+                                    <i class="tax-info">+10% GST</i>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+        <script>
+            let taxSwitch = document.getElementById("flexSwitchCheckDefault")
+            taxSwitch.addEventListener("click", () => {
+                let tax_info = document.getElementsByClassName("tax-info")
+                for (info of tax_info) {
+                    if (info.style.display != "inline") {
+                        info.style.display = "inline";
+                    } else {
+                        info.style.display = "none"
+                    }
+
+                }
+                
+            })
+        </script>
+</body>
